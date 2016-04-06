@@ -1,3 +1,6 @@
+
+# adjust the crontab accordingly
+
 > crontab -l
 
 # execute every minute
@@ -5,4 +8,3 @@
 
 # execute every 2 minutes
 */2 * * * * /home/oracle/dba/karao/scripts/reduce.sh oltp1
-
