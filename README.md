@@ -2,7 +2,6 @@
 # cellmetricstoolkit
 - Karl Arao, Oracle ACE (bit.ly/karlarao), OCP-DBA, RHCE
 - http://karlarao.wordpress.com
----
 
 # The general workflow
 
