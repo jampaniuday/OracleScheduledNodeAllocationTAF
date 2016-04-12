@@ -12,13 +12,16 @@
 * adjust the homes and instance names accordingly
 * implement the crontab entry for auto expand and reduce, also make sure to use the TAF tnsnames entry
 * for monitoring execute the following on separate windows:
+
   ```
   sh mon_services.sh
   sh mon_session.sh
   sh px.sh
   ```
-  this will spool 3 txt files, so you can dump them in a folder for each benchmark run 
+  this will spool 3 txt files, so you can dump them in a folder for each benchmark run
+  
 * to execute the workload drivers run the following on separate windows:
+
   ```
   sh run_oltp.sh
   sh run_dw.sh
