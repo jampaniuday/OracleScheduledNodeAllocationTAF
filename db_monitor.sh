@@ -3,9 +3,12 @@ export DATE=$(date +%Y%m%d%H%M%S%N)
 
 sqlplus -s /NOLOG <<! &
 connect / as sysdba
+alter session disable parallel query;
+spool mon_session.txt append
 
+set colsep ','
 col txt format a30
-select inst_id, count(*),txt, username, sql_id, failover_type, failover_method, failed_over
+select TO_CHAR(sysdate, 'MM/DD/YY HH24:MI:SS') TM, inst_id, count(*),txt, username, sql_id, failover_type, failover_method, failed_over
  from (
 select  
 	s.inst_id, 
@@ -24,7 +27,7 @@ and   sa.sql_text NOT LIKE '%usercheck%'
 and  s.username NOT IN ('SYS')
 )
 group by inst_id, username, sql_id, txt, failover_type, failover_method, failed_over
-order by 1 asc
+order by 2 asc
 /
 
 exit;

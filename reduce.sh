@@ -15,4 +15,4 @@ PATH=$ORACLE_HOME/bin:$PATH
 export PATH
 
 /u01/app/oracle/product/11.2.0.3/dbhome_1/bin/srvctl modify service -d oltp -s oltp_srvc -n -i oltp1 -a oltp2
-
+/u01/app/oracle/product/11.2.0.3/dbhome_1/bin/srvctl config service -d oltp

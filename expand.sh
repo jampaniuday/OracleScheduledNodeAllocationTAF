@@ -16,4 +16,4 @@ export PATH
 
 /u01/app/oracle/product/11.2.0.3/dbhome_1/bin/srvctl modify service -d oltp -s oltp_srvc -n -i oltp1,oltp2
 /u01/app/oracle/product/11.2.0.3/dbhome_1/bin/srvctl start service -d oltp -s oltp_srvc
-
+/u01/app/oracle/product/11.2.0.3/dbhome_1/bin/srvctl config service -d oltp

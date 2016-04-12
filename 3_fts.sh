@@ -3,10 +3,12 @@ export DATE=$(date +%Y%m%d%H%M%S%N)
 
 sqlplus -s /NOLOG <<! &
 connect karlarao/karlarao@oltp_srvc
+--alter session disable parallel query;
 set timing off
 set echo off
 set lines 300
 --spool all_nodes_full_table_scan_$ORACLE_SID-$DATE.log  
+spool benchmark_dw.txt append
 
 col time1 new_value time1
 col time2 new_value time2
@@ -16,7 +18,8 @@ col start_time new_value start_time
 
 select TO_CHAR(SYSDATE,'MM/DD/YY HH24:MI:SS') start_time from dual;
 select to_char(sysdate, 'SSSSS') time1 from dual;
-select count(*) from iosaturationtoolkit;
+select count(*) from 
+(select count(*) from iosaturationtoolkit) a, (select count(*) from iosaturationtoolkit) b, (select count(*) from iosaturationtoolkit) c, (select count(*) from iosaturationtoolkit) d ;
 select to_char(sysdate, 'SSSSS') time2 from dual;
 select &&time2 - &&time1 total_time from dual;
 
