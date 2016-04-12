@@ -19,7 +19,6 @@
   sh px.sh
   ```
   this will spool 3 txt files, so you can dump them in a folder for each benchmark run
-  
 * to execute the workload drivers run the following on separate windows:
 
   ```
