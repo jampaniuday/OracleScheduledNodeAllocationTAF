@@ -9,12 +9,8 @@ set time on
 alter session enable parallel dml;
 insert /*+ APPEND */ into iosaturationtoolkit select * from iosaturationtoolkit;
 commit;
-
-alter table iosaturationtoolkit logging;
 exit;
 !
 wait
 done
 wait
-
-
